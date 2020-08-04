@@ -1,0 +1,48 @@
+{
+  "name": "screencloud-api",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --watch --verbose",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "translate": "babel ./src -d ./dist",
+    "build": "npm run clean && npm run translate",
+    "start": "npm run build && node ./dist/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-async-to-generator": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-rewire": "^1.2.0",
+    "babel-watch": "^2.0.7",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-standard": "^3.0.1",
+    "eslint-config-google": "^0.12.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.9.0",
+    "jest-createspyobj": "^1.2.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.726.0",
+    "babel-polyfill": "^6.26.0",
+    "claudia-api-builder": "^4.1.2",
+    "debug": "^4.1.1",
+    "eslint-plugin-flowtype": "^3.4.2"
+  }
+}
