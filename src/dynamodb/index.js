@@ -2,7 +2,11 @@ import aws from 'aws-sdk';
 
 const debug = require('debug')('screencloud-api:dynamodb');
 
-import { generateWriterSortKey, generatFeatureSortKey } from './helpers';
+import {
+  generateWriterSortKey,
+  generatFeatureSortKey,
+  generatePlayCountSortKey,
+} from './helpers';
 
 const config = {
   ...(process.env.MOCK_DYNAMODB_ENDPOINT && {
@@ -148,6 +152,48 @@ export class DynamoDBHelper {
           requests.push(guestRequest);
         }
       }
+
+      // deal with the play count - this needs to be improved as no indication what year etc. counts are from
+      // assuming 2020 for the moment and just hard coing dates.
+      const JuneRequest = {
+        PutRequest: {
+          Item: {
+            artist,
+            song: generatePlayCountSortKey(june, '2020', '06', song),
+            playcount: june,
+            playcountyear: '2020',
+            playcountmonth: '06',
+          },
+        },
+      };
+
+      const JulyRequest = {
+        PutRequest: {
+          Item: {
+            artist,
+            song: generatePlayCountSortKey(july, '2020', '07', song),
+            playcount: july,
+            playcountyear: '2020',
+            playcountmonth: '07',
+          },
+        },
+      };
+
+      const AugustRequest = {
+        PutRequest: {
+          Item: {
+            artist,
+            song: generatePlayCountSortKey(august, '2020', '08', song),
+            playcount: august,
+            playcountyear: '2020',
+            playcountmonth: '08',
+          },
+        },
+      };
+
+      requests.push(JuneRequest);
+      requests.push(JulyRequest);
+      requests.push(AugustRequest);
 
       requests.push(request);
     }
