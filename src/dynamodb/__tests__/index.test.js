@@ -5,7 +5,7 @@ import { SWIFT, EXAMPLE_RESULTS } from './__helpers__';
 
 const debug = require('debug')('screencloud-api:dynamodb:tests');
 
-describe('dynamodb helper', () => {
+describe('basic queries', () => {
   const helper = new DynamoDBHelper();
 
   beforeEach(async () => {
@@ -13,7 +13,7 @@ describe('dynamodb helper', () => {
   });
 
   it('check correct results return for song query', async () => {
-    const results = await helper.getItems({ pk: 'Taylor Swift', sk: 'Ex' });
+    const results = await helper.getItems({ pk: 'Taylor Swift', sk: 'Exile' });
     const { songQueryResult } = EXAMPLE_RESULTS;
     expect(results).toStrictEqual(songQueryResult);
   });

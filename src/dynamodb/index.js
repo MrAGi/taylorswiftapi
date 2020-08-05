@@ -2,6 +2,8 @@ import aws from 'aws-sdk';
 
 const debug = require('debug')('screencloud-api:dynamodb');
 
+import { generateWriterSortKey } from './helpers';
+
 const config = {
   ...(process.env.MOCK_DYNAMODB_ENDPOINT && {
     endpoint: process.env.MOCK_DYNAMODB_ENDPOINT,
@@ -40,10 +42,10 @@ export class DynamoDBHelper {
 
   async getItems(
     values,
-    config = { pkn: 'artist', skn: 'song', index: undefined }
+    config = { pkn: 'artist', skn: 'song', index: undefined, begins: false }
   ) {
     const { pk, sk } = values;
-    const { pkn, skn, index } = config;
+    const { pkn, skn, index, begins } = config;
     const params = {
       TableName: process.env.DYNAMODB_TABLE_NAME,
       KeyConditionExpression: `#${pkn} = :${pkn}`,
@@ -56,7 +58,9 @@ export class DynamoDBHelper {
     };
 
     if (sk !== undefined) {
-      params.KeyConditionExpression = `#${pkn} = :${pkn} and begins_with(#${skn}, :${skn})`;
+      params.KeyConditionExpression = `#${pkn} = :${pkn} and ${
+        begins ? `begins_with(#${skn}, :${skn})` : `#${skn} = :${skn}`
+      }`;
       params.ExpressionAttributeNames[`#${skn}`] = `${skn}`;
       params.ExpressionAttributeValues[`:${skn}`] = sk;
     }
@@ -84,7 +88,7 @@ export class DynamoDBHelper {
         song,
         artist,
         album,
-        writer,
+        writer: writers,
         year,
         june,
         july,
@@ -113,6 +117,20 @@ export class DynamoDBHelper {
           },
         },
       };
+
+      for (const writer of writers) {
+        const writerRequest = {
+          PutRequest: {
+            Item: {
+              artist,
+              song: generateWriterSortKey(writer, song),
+              writer,
+            },
+          },
+        };
+
+        requests.push(writerRequest);
+      }
 
       requests.push(request);
     }
