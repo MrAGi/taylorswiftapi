@@ -36,13 +36,15 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.9.0",
-    "jest-createspyobj": "^1.2.2"
+    "jest-createspyobj": "^1.2.2",
+    "jest-dynalite": "^3.0.0"
   },
   "dependencies": {
     "aws-sdk": "^2.726.0",
     "babel-polyfill": "^6.26.0",
     "claudia-api-builder": "^4.1.2",
     "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
     "eslint-plugin-flowtype": "^3.4.2"
   }
 }

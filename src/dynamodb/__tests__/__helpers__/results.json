@@ -1,0 +1,40 @@
+{
+  "songQueryResult": [
+    {
+      "artist": "Taylor Swift",
+      "song": "Exile",
+      "album": "Folklore",
+      "year": "2020",
+      "cover": 0,
+      "albumversion": 0,
+      "singleversion": 0,
+      "remix": 0,
+      "liveversion": 0,
+      "piano": 0
+    }
+  ],
+  "yearQueryResult": [
+    { "year": "2020", "artist": "Taylor Swift", "song": "Betty" },
+    {
+      "year": "2020",
+      "artist": "Taylor Swift",
+      "song": "The Last Great American Dynasty"
+    },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Mirrorball" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "The Lakes" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Cardigan" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "This Is Me Trying" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Peace" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "The 1" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Mad Woman" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Only the Young" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Illicit Affairs" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Seven" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "My Tears Ricochet" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Epiphany" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Invisible String" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Hoax" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "Exile" },
+    { "year": "2020", "artist": "Taylor Swift", "song": "August" }
+  ]
+}
