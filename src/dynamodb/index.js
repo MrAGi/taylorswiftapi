@@ -2,7 +2,7 @@ import aws from 'aws-sdk';
 
 const debug = require('debug')('screencloud-api:dynamodb');
 
-import { generateWriterSortKey } from './helpers';
+import { generateWriterSortKey, generatFeatureSortKey } from './helpers';
 
 const config = {
   ...(process.env.MOCK_DYNAMODB_ENDPOINT && {
@@ -99,6 +99,7 @@ export class DynamoDBHelper {
         remix,
         live: liveversion,
         piano,
+        featuring,
       } = item;
 
       const request = {
@@ -130,6 +131,22 @@ export class DynamoDBHelper {
         };
 
         requests.push(writerRequest);
+      }
+
+      if (featuring !== undefined) {
+        for (const guest of featuring) {
+          const guestRequest = {
+            PutRequest: {
+              Item: {
+                artist,
+                song: generatFeatureSortKey(guest, song),
+                featuring: guest,
+              },
+            },
+          };
+
+          requests.push(guestRequest);
+        }
       }
 
       requests.push(request);
