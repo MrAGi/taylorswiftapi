@@ -87,10 +87,18 @@ const requestChunk = (requests) => {
   return chunks;
 };
 
+/** @typedef {Object} RequestItems
+ * @property [k: string] {Array<PutRequest>} The table name
+ */
+
+/** @typedef {Object} BatchPutRequest
+ * @property {RequestItems} RequestItems
+ */
+
 /**
  * Adds boiler plate request info required for a batchput operation to array of dynamodb requests
  * @param {Array.<PutRequest>} requests An array of dynamodb request
- * @returns {Object}
+ * @returns {BatchPutRequest}
  */
 const createBatchPutRequest = (requests) => {
   const params = {
