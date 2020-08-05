@@ -36,5 +36,107 @@
     { "year": "2020", "artist": "Taylor Swift", "song": "Hoax" },
     { "year": "2020", "artist": "Taylor Swift", "song": "Exile" },
     { "year": "2020", "artist": "Taylor Swift", "song": "August" }
+  ],
+  "coverQueryResults": [
+    {
+      "artist": "Taylor Swift",
+      "cover": 1,
+      "song": "Bette Davis Eyes (live cover)"
+    },
+    { "artist": "Taylor Swift", "cover": 1, "song": "Breathless (cover)" },
+    { "artist": "Taylor Swift", "cover": 1, "song": "American Girl (cover)" },
+    {
+      "artist": "Taylor Swift",
+      "cover": 1,
+      "song": "White Christmas (cover)"
+    },
+    { "artist": "Taylor Swift", "cover": 1, "song": "Umbrella (live cover)" },
+    { "artist": "Jack Ingram", "cover": 1, "song": "Hold On (live cover)" },
+    {
+      "artist": "Taylor Swift",
+      "cover": 1,
+      "song": "I Want You Back (live cover)"
+    },
+    { "artist": "Taylor Swift", "cover": 1, "song": "Macavity (cover)" },
+    { "artist": "Taylor Swift", "cover": 1, "song": "September (cover)" },
+    { "artist": "Taylor Swift", "cover": 1, "song": "Silent Night (cover)" },
+    { "artist": "Taylor Swift", "cover": 1, "song": "Santa Baby (cover)" },
+    {
+      "artist": "Taylor Swift",
+      "cover": 1,
+      "song": "Last Christmas (cover)"
+    },
+    {
+      "artist": "Taylor Swift",
+      "cover": 1,
+      "song": "Drops of Jupiter (live cover)"
+    }
+  ],
+  "albumVersionQuery": [
+    {
+      "albumversion": 1,
+      "artist": "Taylor Swift",
+      "song": "Bad Blood (album version)"
+    },
+    {
+      "albumversion": 1,
+      "artist": "John Mayer",
+      "song": "Half of My Heart (album version)"
+    }
+  ],
+  "singleVersionQuery": [
+    {
+      "artist": "Taylor Swift",
+      "singleversion": 1,
+      "song": "Long Live (single version)"
+    },
+    {
+      "artist": "Taylor Swift",
+      "singleversion": 1,
+      "song": "Bad Blood (remixed single version)"
+    }
+  ],
+  "remixQuery": [
+    { "artist": "Taylor Swift", "remix": 1, "song": "Lover (Remix)" },
+    {
+      "artist": "Taylor Swift",
+      "remix": 1,
+      "song": "Bad Blood (remixed single version)"
+    }
+  ],
+  "liveVersionQuery": [
+    { "artist": "Kenny Chesney", "liveversion": 1, "song": "Big Star (Live)" },
+    {
+      "artist": "Taylor Swift",
+      "liveversion": 1,
+      "song": "Bette Davis Eyes (live cover)"
+    },
+    {
+      "artist": "Taylor Swift",
+      "liveversion": 1,
+      "song": "Umbrella (live cover)"
+    },
+    {
+      "artist": "Jack Ingram",
+      "liveversion": 1,
+      "song": "Hold On (live cover)"
+    },
+    {
+      "artist": "Taylor Swift",
+      "liveversion": 1,
+      "song": "I Want You Back (live cover)"
+    },
+    {
+      "artist": "Taylor Swift",
+      "liveversion": 1,
+      "song": "Drops of Jupiter (live cover)"
+    }
+  ],
+  "pianoQuery": [
+    {
+      "artist": "Taylor Swift",
+      "piano": 1,
+      "song": "Forever & Always (piano version)"
+    }
   ]
 }

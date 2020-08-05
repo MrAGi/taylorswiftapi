@@ -30,4 +30,82 @@ describe('dynamodb helper', () => {
     const { yearQueryResult } = EXAMPLE_RESULTS;
     expect(results).toStrictEqual(yearQueryResult);
   });
+
+  it('check correct results return for query on cover index', async () => {
+    const results = await helper.getItems(
+      { pk: 1 },
+      {
+        pkn: 'cover',
+        index: 'cover-index',
+      }
+    );
+
+    const { coverQueryResults } = EXAMPLE_RESULTS;
+    expect(results).toStrictEqual(coverQueryResults);
+  });
+
+  it('check correct results return for query on album index', async () => {
+    const results = await helper.getItems(
+      { pk: 1 },
+      {
+        pkn: 'albumversion',
+        index: 'albumversion-index',
+      }
+    );
+
+    const { albumVersionQuery } = EXAMPLE_RESULTS;
+    expect(results).toStrictEqual(albumVersionQuery);
+  });
+
+  it('check correct results return for query on single index', async () => {
+    const results = await helper.getItems(
+      { pk: 1 },
+      {
+        pkn: 'singleversion',
+        index: 'singleversion-index',
+      }
+    );
+
+    const { singleVersionQuery } = EXAMPLE_RESULTS;
+    expect(results).toStrictEqual(singleVersionQuery);
+  });
+
+  it('check correct results return for query on remix index', async () => {
+    const results = await helper.getItems(
+      { pk: 1 },
+      {
+        pkn: 'remix',
+        index: 'remix-index',
+      }
+    );
+
+    const { remixQuery } = EXAMPLE_RESULTS;
+    expect(results).toStrictEqual(remixQuery);
+  });
+
+  it('check correct results return for query on live index', async () => {
+    const results = await helper.getItems(
+      { pk: 1 },
+      {
+        pkn: 'liveversion',
+        index: 'liveversion-index',
+      }
+    );
+
+    const { liveVersionQuery } = EXAMPLE_RESULTS;
+    expect(results).toStrictEqual(liveVersionQuery);
+  });
+
+  it('check correct results return for query on piano index', async () => {
+    const results = await helper.getItems(
+      { pk: 1 },
+      {
+        pkn: 'piano',
+        index: 'piano-index',
+      }
+    );
+
+    const { pianoQuery } = EXAMPLE_RESULTS;
+    expect(results).toStrictEqual(pianoQuery);
+  });
 });

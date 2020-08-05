@@ -13,8 +13,8 @@ module.exports = {
         { AttributeName: 'remix', AttributeType: 'N' },
         { AttributeName: 'liveversion', AttributeType: 'N' },
         { AttributeName: 'piano', AttributeType: 'N' },
-        // { AttributeName: 'writer', AttributeType: 'S' },
-        // { AttributeName: 'featuring', AttributeType: 'S' },
+        { AttributeName: 'writer', AttributeType: 'S' },
+        { AttributeName: 'featuring', AttributeType: 'S' },
       ],
       KeySchema: [
         {
@@ -43,26 +43,26 @@ module.exports = {
             WriteCapacityUnits: 1,
           },
         },
-        // {
-        //   IndexName: 'featuring-song-index',
-        //   KeySchema: [
-        //     {
-        //       AttributeName: 'featuring',
-        //       KeyType: 'HASH',
-        //     },
-        //     {
-        //       AttributeName: 'song',
-        //       KeyType: 'RANGE',
-        //     },
-        //   ],
-        //   Projection: {
-        //     ProjectionType: 'KEYS_ONLY',
-        //   },
-        //   ProvisionedThroughput: {
-        //     ReadCapacityUnits: 1,
-        //     WriteCapacityUnits: 1,
-        //   },
-        // },
+        {
+          IndexName: 'featuring-song-index',
+          KeySchema: [
+            {
+              AttributeName: 'featuring',
+              KeyType: 'HASH',
+            },
+            {
+              AttributeName: 'song',
+              KeyType: 'RANGE',
+            },
+          ],
+          Projection: {
+            ProjectionType: 'KEYS_ONLY',
+          },
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1,
+          },
+        },
         {
           IndexName: 'singleversion-index',
           KeySchema: [
@@ -175,26 +175,26 @@ module.exports = {
             WriteCapacityUnits: 1,
           },
         },
-        // {
-        //   IndexName: 'writer-song-index',
-        //   KeySchema: [
-        //     {
-        //       AttributeName: 'writer',
-        //       KeyType: 'HASH',
-        //     },
-        //     {
-        //       AttributeName: 'song',
-        //       KeyType: 'RANGE',
-        //     },
-        //   ],
-        //   Projection: {
-        //     ProjectionType: 'KEYS_ONLY',
-        //   },
-        //   ProvisionedThroughput: {
-        //     ReadCapacityUnits: 1,
-        //     WriteCapacityUnits: 1,
-        //   },
-        // },
+        {
+          IndexName: 'writer-song-index',
+          KeySchema: [
+            {
+              AttributeName: 'writer',
+              KeyType: 'HASH',
+            },
+            {
+              AttributeName: 'song',
+              KeyType: 'RANGE',
+            },
+          ],
+          Projection: {
+            ProjectionType: 'KEYS_ONLY',
+          },
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1,
+          },
+        },
       ],
       ProvisionedThroughput: { ReadCapacityUnits: 1, WriteCapacityUnits: 1 },
     },
