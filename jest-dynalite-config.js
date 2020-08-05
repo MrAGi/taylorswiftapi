@@ -15,8 +15,8 @@ module.exports = {
         { AttributeName: 'piano', AttributeType: 'N' },
         { AttributeName: 'writer', AttributeType: 'S' },
         { AttributeName: 'featuring', AttributeType: 'S' },
-        { AttributeName: 'playcountyear', AttributeType: 'S' },
-        { AttributeName: 'playcountmonth', AttributeType: 'S' },
+        { AttributeName: 'playcountyearmonth', AttributeType: 'S' },
+        { AttributeName: 'playcount', AttributeType: 'N' },
       ],
       KeySchema: [
         {
@@ -198,19 +198,19 @@ module.exports = {
           },
         },
         {
-          IndexName: 'playcount-index',
+          IndexName: 'count-index',
           KeySchema: [
             {
-              AttributeName: 'playcountyear',
+              AttributeName: 'playcountyearmonth',
               KeyType: 'HASH',
             },
             {
-              AttributeName: 'playcountmonth',
+              AttributeName: 'playcount',
               KeyType: 'RANGE',
             },
           ],
           Projection: {
-            NonKeyAttributes: ['playcount'],
+            NonKeyAttributes: ['playcountyear', 'playcountmonth'],
             ProjectionType: 'INCLUDE',
           },
           ProvisionedThroughput: {

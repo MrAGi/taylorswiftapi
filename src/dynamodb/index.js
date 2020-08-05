@@ -46,10 +46,17 @@ export class DynamoDBHelper {
 
   async getItems(
     values,
-    config = { pkn: 'artist', skn: 'song', index: undefined, begins: false }
+    config = {
+      pkn: 'artist',
+      skn: 'song',
+      index: undefined,
+      begins: false,
+      desc: false,
+      limit: 10,
+    }
   ) {
     const { pk, sk } = values;
-    const { pkn, skn, index, begins } = config;
+    const { pkn, skn, index, begins, desc, limit } = config;
     const params = {
       TableName: process.env.DYNAMODB_TABLE_NAME,
       KeyConditionExpression: `#${pkn} = :${pkn}`,
@@ -71,6 +78,14 @@ export class DynamoDBHelper {
 
     if (index !== undefined) {
       params.IndexName = index;
+    }
+
+    if (desc !== undefined) {
+      params.ScanIndexForward = !desc;
+    }
+
+    if (limit !== undefined) {
+      params.Limit = limit;
     }
 
     try {
@@ -160,9 +175,8 @@ export class DynamoDBHelper {
           Item: {
             artist,
             song: generatePlayCountSortKey(june, '2020', '06', song),
-            playcount: june,
-            playcountyear: '2020',
-            playcountmonth: '06',
+            playcount: parseInt(june),
+            playcountyearmonth: '2020-06',
           },
         },
       };
@@ -172,9 +186,8 @@ export class DynamoDBHelper {
           Item: {
             artist,
             song: generatePlayCountSortKey(july, '2020', '07', song),
-            playcount: july,
-            playcountyear: '2020',
-            playcountmonth: '07',
+            playcount: parseInt(july),
+            playcountyearmonth: '2020-07',
           },
         },
       };
@@ -184,9 +197,8 @@ export class DynamoDBHelper {
           Item: {
             artist,
             song: generatePlayCountSortKey(august, '2020', '08', song),
-            playcount: august,
-            playcountyear: '2020',
-            playcountmonth: '08',
+            playcount: parseInt(august),
+            playcountyearmonth: '2020-08',
           },
         },
       };

@@ -28,11 +28,12 @@ describe('play count queries', () => {
 
   it('check correct results return for query on play count for given year/month', async () => {
     const results = await helper.getItems(
-      { pk: '2020', sk: `08` },
+      { pk: '2020-08' },
       {
-        pkn: 'playcountyear',
-        skn: 'playcountmonth',
-        index: 'playcount-index',
+        pkn: 'playcountyearmonth',
+        index: 'count-index',
+        desc: true,
+        limit: 10,
       }
     );
 
