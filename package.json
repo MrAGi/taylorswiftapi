@@ -37,7 +37,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.9.0",
     "jest-createspyobj": "^1.2.2",
-    "jest-dynalite": "^3.0.0"
+    "jest-dynalite": "^3.0.0",
+    "jsdoc": "^3.6.5"
   },
   "dependencies": {
     "aws-sdk": "^2.726.0",

@@ -8,6 +8,11 @@ import {
   generatePlayCountSortKey,
 } from './helpers';
 
+/**
+ * Configuration for DynamoDB for working with Dynalite
+ * @constant
+ * @type {Object}
+ */
 const config = {
   ...(process.env.MOCK_DYNAMODB_ENDPOINT && {
     endpoint: process.env.MOCK_DYNAMODB_ENDPOINT,
@@ -16,10 +21,63 @@ const config = {
   }),
 };
 
+/**
+ * Chunking size for batach requests (limited by DynamoDB)
+ * @constant
+ * @type {Number}
+ * @default
+ */
 const CHUNK_SIZE = 25; //for batch requests
 
+/** @typedef {Object} SongRequestItem
+ * @property {string} artist The partition key value
+ * @property {string} song The sort key value
+ * @property {string} album The album name
+ * @property {Array<string>} writers List of song writers
+ * @property {string} year Release year for song
+ * @property {Number} cover Cover version flag
+ * @property {Number} albumversion Album version flag
+ * @property {Number} singleversion Single version flag
+ * @property {Number} remix Remix flag
+ * @property {Number} liveversion Live version flag
+ * @property {Number} piano Piano version flag
+ * @property {Array<string>} featuring List of song performers
+ */
+
+/** @typedef {Object} WriterRequestItem
+ * @property {string} artist The partition key value
+ * @property {string} song The sort key value
+ * @property {string} writer The writer's name
+ */
+
+/** @typedef {Object} FeaturingRequestItem
+ * @property {string} artist The partition key value
+ * @property {string} song The sort key value
+ * @property {string} writer The featuring performer's name
+ */
+
+/** @typedef {Object} PlayCountRequestItem
+ * @property {string} artist The partition key value
+ * @property {string} song The sort key value
+ * @property {Number} playcount The total plays for this song
+ * @property {string} playcountyearmonth The year and month for the play count e.g. YYYY-MM.
+ */
+
+/** @typedef {Object} PutItem
+ * @property {(SongRequestItem|WriterRequestItem|FeaturingRequestItem|PlayCountRequestItem)} Item for insertion into DynamoDB
+ */
+
+/** @typedef {Object} PutRequest
+ * @property PutRequest {PutItem} Items for insertion into DynamoDB
+ */
+
+/**
+ * Separates dynamodb request array into chunks of the CHUNK_SIZE
+ * @param {Array.<PutRequest>} requests An array of dynamodb requests
+ * @returns {Array<Array<PutRequest>>}
+ */
 const requestChunk = (requests) => {
-  // break large array of requests in smaller batches
+  // break large array of dynamodb requests in smaller batches
   const chunks = [];
   let index = 0;
   while (index < requests.length) {
@@ -29,6 +87,11 @@ const requestChunk = (requests) => {
   return chunks;
 };
 
+/**
+ * Adds boiler plate request info required for a batchput operation to array of dynamodb requests
+ * @param {Array.<PutRequest>} requests An array of dynamodb request
+ * @returns {Object}
+ */
 const createBatchPutRequest = (requests) => {
   const params = {
     RequestItems: {
