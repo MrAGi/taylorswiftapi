@@ -120,6 +120,7 @@ export class DynamoDBHelper {
   /** @typedef {Object} SearchValues The value(s) to use for the search
    * @property {string} pk the partition key value for search
    * @property {string} [sk] the sort key value for the search
+   * @property {string} [skc] the sort key value to use as upper value if between config option is set to true
    */
 
   /** @typedef {Object} SearchConfig Key names and options for retreiving data
@@ -127,8 +128,10 @@ export class DynamoDBHelper {
    * @property {string} [skn] the sort key name for the search
    * @property {string} [index] the global index to search
    * @property {boolean} [begins=false] whether sort key is searched used begins with
+   * @property {boolean} [between=false] whether sort key is searched used between
    * @property {boolean} [desc=false] whether the values are returned in descending order
-   * @property {Number} [limit=10] the number of results to return
+   * @property {Number} [limit] the number of results to return
+   * @property {string} [operator==] the operator to use on the sort key
    */
 
   /**
@@ -136,19 +139,32 @@ export class DynamoDBHelper {
    * @param {SearchValues} values
    * @param {SearchConfig} config
    */
-  async getItems(
-    values,
-    config = {
-      pkn: 'artist',
-      skn: 'song',
-      index: undefined,
-      begins: false,
-      desc: false,
-      limit: 10,
-    }
-  ) {
-    const { pk, sk } = values;
-    const { pkn, skn, index, begins, desc, limit } = config;
+  async getItems(values, config = {}) {
+    const fullConfig = Object.assign(
+      {
+        pkn: 'artist',
+        skn: undefined,
+        index: undefined,
+        begins: false,
+        between: false,
+        desc: false,
+        limit: undefined,
+        operator: '=',
+      },
+      config
+    );
+    const { pk, sk, skc } = values;
+    const {
+      pkn,
+      skn,
+      skcn,
+      index,
+      begins,
+      between,
+      desc,
+      limit,
+      operator,
+    } = fullConfig;
     const params = {
       TableName: process.env.DYNAMODB_TABLE_NAME,
       KeyConditionExpression: `#${pkn} = :${pkn}`,
@@ -161,9 +177,15 @@ export class DynamoDBHelper {
     };
 
     if (sk !== undefined) {
-      params.KeyConditionExpression = `#${pkn} = :${pkn} and ${
-        begins ? `begins_with(#${skn}, :${skn})` : `#${skn} = :${skn}`
-      }`;
+      if (begins) {
+        params.KeyConditionExpression = `${params.KeyConditionExpression} and begins_with(#${skn}, :${skn})`;
+      } else if (between) {
+        const skcn = `${skn}2`;
+        params.KeyConditionExpression = `${params.KeyConditionExpression} and #${skn} between :${skn} and :${skcn}`;
+        params.ExpressionAttributeValues[`:${skcn}`] = skc;
+      } else {
+        params.KeyConditionExpression = `${params.KeyConditionExpression} and #${skn} ${operator} :${skn}`;
+      }
       params.ExpressionAttributeNames[`#${skn}`] = `${skn}`;
       params.ExpressionAttributeValues[`:${skn}`] = sk;
     }
@@ -180,6 +202,7 @@ export class DynamoDBHelper {
       params.Limit = limit;
     }
 
+    debug(params);
     try {
       const result = await this.docClient.query(params).promise();
       const { Items } = result;

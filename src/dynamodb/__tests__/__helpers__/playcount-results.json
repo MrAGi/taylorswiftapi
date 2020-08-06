@@ -80,5 +80,201 @@
       "artist": "Taylor Swift",
       "song": "Long Live (single version)-p-2020-08"
     }
+  ],
+  "august2020CountGreaterThan105": [
+    {
+      "artist": "Taylor Swift",
+      "playcount": 110,
+      "playcountyearmonth": "2020-08",
+      "song": "Last Christmas (cover)-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 110,
+      "playcountyearmonth": "2020-08",
+      "song": "Style-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 110,
+      "playcountyearmonth": "2020-08",
+      "song": "I Wish You Would-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 110,
+      "playcountyearmonth": "2020-08",
+      "song": "Never Grow Up-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 110,
+      "playcountyearmonth": "2020-08",
+      "song": "The Best Day-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 109,
+      "playcountyearmonth": "2020-08",
+      "song": "Hey Stephen-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 109,
+      "playcountyearmonth": "2020-08",
+      "song": "Lover-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 108,
+      "playcountyearmonth": "2020-08",
+      "song": "Cold as You-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 108,
+      "playcountyearmonth": "2020-08",
+      "song": "Innocent-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 108,
+      "playcountyearmonth": "2020-08",
+      "song": "Long Live (single version)-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 107,
+      "playcountyearmonth": "2020-08",
+      "song": "Only the Young-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 107,
+      "playcountyearmonth": "2020-08",
+      "song": "Mean-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 107,
+      "playcountyearmonth": "2020-08",
+      "song": "This Is Me Trying-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 106,
+      "playcountyearmonth": "2020-08",
+      "song": "Our Song-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 106,
+      "playcountyearmonth": "2020-08",
+      "song": "Mad Woman-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 106,
+      "playcountyearmonth": "2020-08",
+      "song": "The Moment I Knew-p-2020-08"
+    }
+  ],
+  "august2020CountBetween20and30": [
+    {
+      "artist": "Taylor Swift",
+      "playcount": 30,
+      "playcountyearmonth": "2020-08",
+      "song": "The Archer-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 30,
+      "playcountyearmonth": "2020-08",
+      "song": "You're Not Sorry-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 29,
+      "playcountyearmonth": "2020-08",
+      "song": "Me!-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 29,
+      "playcountyearmonth": "2020-08",
+      "song": "Bad Blood (album version)-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 29,
+      "playcountyearmonth": "2020-08",
+      "song": "Epiphany-p-2020-08"
+    },
+    {
+      "artist": "Jack Ingram",
+      "playcount": 28,
+      "playcountyearmonth": "2020-08",
+      "song": "Hold On (live cover)-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 27,
+      "playcountyearmonth": "2020-08",
+      "song": "Come Back... Be Here-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 26,
+      "playcountyearmonth": "2020-08",
+      "song": "Starlight-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 26,
+      "playcountyearmonth": "2020-08",
+      "song": "August-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 26,
+      "playcountyearmonth": "2020-08",
+      "song": "Enchanted-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 25,
+      "playcountyearmonth": "2020-08",
+      "song": "A Place in This World-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 23,
+      "playcountyearmonth": "2020-08",
+      "song": "Daylight-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 22,
+      "playcountyearmonth": "2020-08",
+      "song": "Today Was a Fairytale-p-2020-08"
+    },
+    {
+      "artist": "Kenny Chesney",
+      "playcount": 21,
+      "playcountyearmonth": "2020-08",
+      "song": "Big Star (Live)-p-2020-08"
+    },
+    {
+      "artist": "Tim McGraw and Taylor Swift",
+      "playcount": 21,
+      "playcountyearmonth": "2020-08",
+      "song": "Highway Don't Care-p-2020-08"
+    },
+    {
+      "artist": "Taylor Swift",
+      "playcount": 21,
+      "playcountyearmonth": "2020-08",
+      "song": "False God-p-2020-08"
+    }
   ]
 }

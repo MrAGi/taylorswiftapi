@@ -13,7 +13,10 @@ describe('basic queries', () => {
   });
 
   it('check correct results return for song query', async () => {
-    const results = await helper.getItems({ pk: 'Taylor Swift', sk: 'Exile' });
+    const results = await helper.getItems(
+      { pk: 'Taylor Swift', sk: 'Exile' },
+      { pkn: 'artist', skn: 'song' }
+    );
     const { songQueryResult } = EXAMPLE_RESULTS;
     expect(results).toStrictEqual(songQueryResult);
   });
