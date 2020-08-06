@@ -110,11 +110,32 @@ const createBatchPutRequest = (requests) => {
   return params;
 };
 
+/** Class for interacting with DynamoDB */
 export class DynamoDBHelper {
+  /** creates a DynamoDB helper with the  default config*/
   constructor() {
     this.docClient = new aws.DynamoDB.DocumentClient(config);
   }
 
+  /** @typedef {Object} SearchValues The value(s) to use for the search
+   * @property {string} pk the partition key value for search
+   * @property {string} [sk] the sort key value for the search
+   */
+
+  /** @typedef {Object} SearchConfig Key names and options for retreiving data
+   * @property {string} pkn the partition key name for search
+   * @property {string} [skn] the sort key name for the search
+   * @property {string} [index] the global index to search
+   * @property {boolean} [begins=false] whether sort key is searched used begins with
+   * @property {boolean} [desc=false] whether the values are returned in descending order
+   * @property {Number} [limit=10] the number of results to return
+   */
+
+  /**
+   * Gets items from the database
+   * @param {SearchValues} values
+   * @param {SearchConfig} config
+   */
   async getItems(
     values,
     config = {
@@ -169,6 +190,28 @@ export class DynamoDBHelper {
     }
   }
 
+  /** @typedef {Object} Song Details of individual song
+   * @property {string} song the title of the song
+   * @property {string} artist the main artist/performer of the song
+   * @property {string} album the album the song is associated with
+   * @property {Array<string>} writers List of the writers of the song
+   * @property {number} year the release year of the song
+   * @property {string} june the play count of the song in june (2020)
+   * @property {string} july the play count of the song in july (2020)
+   * @property {string} august the play count of the song in august (2020)
+   * @property {boolean} cover flag indicating if the song is a cover version
+   * @property {boolean} albumVersion flag indicating if the song is a album version
+   * @property {boolean} singleVersion flag indicating if the song is a single version
+   * @property {boolean} remix flag indicating if the song is a remix version
+   * @property {boolean} live flag indicating if the song is a live version
+   * @property {boolean} piano flag indicating if the song is a piano version
+   * @property {Array<string>} featuring List of artists featuring in the song (in addition to the main artist)
+   */
+
+  /**
+   * Adds new items to the database
+   * @param {Array<Song>} items
+   */
   async putItems(items) {
     const requests = [];
 
