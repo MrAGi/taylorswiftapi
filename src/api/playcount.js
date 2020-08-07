@@ -13,7 +13,12 @@ const validateParams = (year, month, limit) => {
   if (limit !== undefined) {
     params.push(limit);
   }
-  if (!params.every((elem) => typeof elem === 'number')) {
+  debug(params);
+  if (
+    !params.every(
+      (elem) => typeof parseInt(elem) === 'number' && !isNaN(parseInt(elem))
+    )
+  ) {
     return { valid: false, reason: 'parameters should be integers' };
   }
   return { valid: true };

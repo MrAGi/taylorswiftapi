@@ -10,7 +10,10 @@ const debug = Debug('screencloud-api:songs');
 const helper = new DynamoDBHelper();
 
 const validateParams = (year) => {
-  if (typeof year !== 'number' || year.toString().length !== 4) {
+  if (
+    (typeof parseInt(year) !== 'number' && !isNaN(parseInt(year))) ||
+    year.toString().length !== 4
+  ) {
     return {
       valid: false,
       reason: 'year should an integer and be valid year in YYYY format',
@@ -21,7 +24,7 @@ const validateParams = (year) => {
 
 export const songs = (api) => {
   api.get(
-    '/songs/{year}',
+    '/songs/year/{year}',
     async (request) => {
       const { pathParams } = request;
       const { year } = pathParams;
@@ -83,6 +86,7 @@ export const songs = (api) => {
       let { name } = pathParams;
 
       if (name !== undefined) {
+        name = name.replace('%20', ' ');
         name = startCase(name);
         debug(`name is ${name}`);
         const results = await helper.getItems(
@@ -117,6 +121,8 @@ export const songs = (api) => {
       let { artist, song } = pathParams;
 
       if (artist !== undefined && song !== undefined) {
+        artist = artist.replace('%20', ' ');
+        song = song.replace('%20', ' ');
         artist = startCase(artist);
         song = startCase(song);
         debug(`song is ${song}`);
@@ -128,7 +134,12 @@ export const songs = (api) => {
           }
         );
 
-        return results;
+        return results.filter(
+          (result) =>
+            !result.song.includes('-p-') &&
+            !result.song.includes('-w-') &&
+            !result.song.includes('-f-')
+        );
       }
 
       return new ApiBuilder.ApiResponse(

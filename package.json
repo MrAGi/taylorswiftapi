@@ -11,7 +11,9 @@
     "clean": "rm -rf ./dist && mkdir dist",
     "translate": "babel ./src -d ./dist",
     "build": "npm run clean && npm run translate",
-    "start": "npm run build && node ./dist/app.js"
+    "start": "npm run build && node ./dist/app.js",
+    "create": "npm run build && claudia create --region eu-west-1 --api-module dist/app --profile adamgmail && claudia tag --tags project=screencloud --profile adamgmail",
+    "update": "npm run build && claudia update --profile adamgmail && claudia tag --tags project=screencloud --profile adamgmail"
   },
   "author": "",
   "license": "ISC",

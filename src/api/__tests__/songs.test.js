@@ -31,7 +31,7 @@ describe('songs api', () => {
 
     await api.proxyRouter(
       createPathEventObject(year, GET_METHOD, {
-        year: '2020',
+        year: 'hello',
       }),
       lambdaContextSpy
     );

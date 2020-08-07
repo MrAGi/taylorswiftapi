@@ -81,32 +81,6 @@
     },
     {
       "artist": "Taylor Swift",
-      "song": "Enchanted-p-2020-06",
-      "playcount": 26,
-      "playcountyearmonth": "2020-06",
-      "album": "Speak Now"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Enchanted-p-2020-07",
-      "playcount": 82,
-      "playcountyearmonth": "2020-07",
-      "album": "Speak Now"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Enchanted-p-2020-08",
-      "playcount": 26,
-      "playcountyearmonth": "2020-08",
-      "album": "Speak Now"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Enchanted-w-Taylor Swift",
-      "writer": "Taylor Swift"
-    },
-    {
-      "artist": "Taylor Swift",
       "song": "End Game",
       "album": "Reputation",
       "year": "2017",
@@ -116,62 +90,6 @@
       "remix": 0,
       "liveversion": 0,
       "piano": 0
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-f-Ed Sheeran",
-      "featuring": "Ed Sheeran"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-f-Future",
-      "featuring": "Future"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-p-2020-06",
-      "playcount": 0,
-      "playcountyearmonth": "2020-06",
-      "album": "Reputation"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-p-2020-07",
-      "playcount": 8,
-      "playcountyearmonth": "2020-07",
-      "album": "Reputation"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-p-2020-08",
-      "playcount": 89,
-      "playcountyearmonth": "2020-08",
-      "album": "Reputation"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-w-Ed Sheeran",
-      "writer": "Ed Sheeran"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-w-Max Martin",
-      "writer": "Max Martin"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-w-Nayvadius Wilburn",
-      "writer": "Nayvadius Wilburn"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-w-Shellback",
-      "writer": "Shellback"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "End Game-w-Taylor Swift",
-      "writer": "Taylor Swift"
     },
     {
       "artist": "Taylor Swift",
@@ -187,37 +105,6 @@
     },
     {
       "artist": "Taylor Swift",
-      "song": "Epiphany-p-2020-06",
-      "playcount": 44,
-      "playcountyearmonth": "2020-06",
-      "album": "Folklore"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Epiphany-p-2020-07",
-      "playcount": 110,
-      "playcountyearmonth": "2020-07",
-      "album": "Folklore"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Epiphany-p-2020-08",
-      "playcount": 29,
-      "playcountyearmonth": "2020-08",
-      "album": "Folklore"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Epiphany-w-Aaron Dessner",
-      "writer": "Aaron Dessner"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Epiphany-w-Taylor Swift",
-      "writer": "Taylor Swift"
-    },
-    {
-      "artist": "Taylor Swift",
       "song": "Everything Has Changed",
       "album": "Red",
       "year": "2012",
@@ -227,42 +114,6 @@
       "remix": 0,
       "liveversion": 0,
       "piano": 0
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Everything Has Changed-f-Ed Sheeran",
-      "featuring": "Ed Sheeran"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Everything Has Changed-p-2020-06",
-      "playcount": 79,
-      "playcountyearmonth": "2020-06",
-      "album": "Red"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Everything Has Changed-p-2020-07",
-      "playcount": 1,
-      "playcountyearmonth": "2020-07",
-      "album": "Red"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Everything Has Changed-p-2020-08",
-      "playcount": 95,
-      "playcountyearmonth": "2020-08",
-      "album": "Red"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Everything Has Changed-w-Ed Sheeran",
-      "writer": "Ed Sheeran"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Everything Has Changed-w-Taylor Swift",
-      "writer": "Taylor Swift"
     },
     {
       "artist": "Taylor Swift",
@@ -278,47 +129,6 @@
     },
     {
       "artist": "Taylor Swift",
-      "song": "Exile-f-Bon Iver",
-      "featuring": "Bon Iver"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Exile-p-2020-06",
-      "playcount": 6,
-      "playcountyearmonth": "2020-06",
-      "album": "Folklore"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Exile-p-2020-07",
-      "playcount": 87,
-      "playcountyearmonth": "2020-07",
-      "album": "Folklore"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Exile-p-2020-08",
-      "playcount": 72,
-      "playcountyearmonth": "2020-08",
-      "album": "Folklore"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Exile-w-Justin Vernon",
-      "writer": "Justin Vernon"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Exile-w-Taylor Swift",
-      "writer": "Taylor Swift"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Exile-w-William Bowery",
-      "writer": "William Bowery"
-    },
-    {
-      "artist": "Taylor Swift",
       "song": "Eyes Open",
       "album": "The Hunger Games",
       "year": "2012",
@@ -328,32 +138,6 @@
       "remix": 0,
       "liveversion": 0,
       "piano": 0
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Eyes Open-p-2020-06",
-      "playcount": 50,
-      "playcountyearmonth": "2020-06",
-      "album": "The Hunger Games"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Eyes Open-p-2020-07",
-      "playcount": 9,
-      "playcountyearmonth": "2020-07",
-      "album": "The Hunger Games"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Eyes Open-p-2020-08",
-      "playcount": 50,
-      "playcountyearmonth": "2020-08",
-      "album": "The Hunger Games"
-    },
-    {
-      "artist": "Taylor Swift",
-      "song": "Eyes Open-w-Taylor Swift",
-      "writer": "Taylor Swift"
     }
   ]
 }

@@ -26,7 +26,7 @@ describe('play count api', () => {
 
     await api.proxyRouter(
       createPathEventObject(playCount, GET_METHOD, {
-        year: '2020',
+        year: 'hello',
         month: 8,
         limit: 25,
       }),
