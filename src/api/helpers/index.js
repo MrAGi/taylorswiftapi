@@ -1,0 +1,16 @@
+export const SONG_PROPERTIES = [
+  'song',
+  'artist',
+  'album',
+  'writer',
+  'year',
+  'june',
+  'july',
+  'august',
+  'cover',
+  'albumVersion',
+  'singleVersion',
+  'remix',
+  'live',
+  'piano',
+];

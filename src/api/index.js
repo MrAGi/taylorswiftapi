@@ -3,10 +3,12 @@ import Debug from 'debug';
 import ApiBuilder from 'claudia-api-builder';
 
 import { DynamoDBHelper } from '../dynamodb';
+import add from './add';
 
-const debug = Debug('somfy:api');
+const debug = Debug('screencloud-api:api');
 
 const api = new ApiBuilder();
-const dynamoDB = new DynamoDBHelper();
+
+add(api);
 
 export default api;
