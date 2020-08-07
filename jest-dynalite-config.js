@@ -218,6 +218,27 @@ module.exports = {
             WriteCapacityUnits: 1,
           },
         },
+        {
+          IndexName: 'album-count-index',
+          KeySchema: [
+            {
+              AttributeName: 'playcountyearmonth',
+              KeyType: 'HASH',
+            },
+            {
+              AttributeName: 'playcount',
+              KeyType: 'RANGE',
+            },
+          ],
+          Projection: {
+            NonKeyAttributes: ['playcountyear', 'playcountmonth', 'album'],
+            ProjectionType: 'INCLUDE',
+          },
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1,
+          },
+        },
       ],
       ProvisionedThroughput: { ReadCapacityUnits: 1, WriteCapacityUnits: 1 },
     },

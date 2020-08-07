@@ -90,29 +90,33 @@ const validateSongs = (songs) => {
 };
 
 export const add = (api) => {
-  api.post('/songs/add', async (request) => {
-    if (Object.prototype.hasOwnProperty.call(request, 'body')) {
-      const { body } = request;
-      if (Array.isArray(body)) {
-        const result = validateSongs(body);
-        const { valid, reason } = result;
-        if (valid) {
-          const result = await helper.putItems(body);
-          return result;
+  api.post(
+    '/songs/add',
+    async (request) => {
+      if (Object.prototype.hasOwnProperty.call(request, 'body')) {
+        const { body } = request;
+        if (Array.isArray(body)) {
+          const result = validateSongs(body);
+          const { valid, reason } = result;
+          if (valid) {
+            const result = await helper.putItems(body);
+            return result;
+          }
+          return new ApiBuilder.ApiResponse(
+            { error: `one or more songs is not valid - ${reason}` },
+            { 'Context-Type': 'text/json' },
+            400
+          );
         }
         return new ApiBuilder.ApiResponse(
-          { error: `one or more songs is not valid - ${reason}` },
+          { error: 'songs not provided as an array' },
           { 'Context-Type': 'text/json' },
           400
         );
       }
-      return new ApiBuilder.ApiResponse(
-        { error: 'songs not provided as an array' },
-        { 'Context-Type': 'text/json' },
-        400
-      );
-    }
-  });
+    },
+    { apiKeyRequired: true }
+  );
 };
 
 export default add;

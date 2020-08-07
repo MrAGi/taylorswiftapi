@@ -201,7 +201,6 @@ export class DynamoDBHelper {
     if (limit !== undefined) {
       params.Limit = limit;
     }
-
     debug(params);
     try {
       const result = await this.docClient.query(params).promise();
@@ -314,6 +313,7 @@ export class DynamoDBHelper {
             song: generatePlayCountSortKey(june, '2020', '06', song),
             playcount: parseInt(june),
             playcountyearmonth: '2020-06',
+            album,
           },
         },
       };
@@ -325,6 +325,7 @@ export class DynamoDBHelper {
             song: generatePlayCountSortKey(july, '2020', '07', song),
             playcount: parseInt(july),
             playcountyearmonth: '2020-07',
+            album,
           },
         },
       };
@@ -336,6 +337,7 @@ export class DynamoDBHelper {
             song: generatePlayCountSortKey(august, '2020', '08', song),
             playcount: parseInt(august),
             playcountyearmonth: '2020-08',
+            album,
           },
         },
       };

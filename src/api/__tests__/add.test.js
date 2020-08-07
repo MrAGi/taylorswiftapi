@@ -1,17 +1,11 @@
 import { createSpyObj } from 'jest-createspyobj';
 import api from '../index';
 import { DynamoDBHelper } from '../../dynamodb';
-import {
-  GET_METHOD,
-  createEventObject,
-  createPathEventObject,
-  ENDPOINTS,
-  POST_METHOD,
-} from './__helpers__';
+import { createEventObject, ENDPOINTS, POST_METHOD } from './__helpers__';
 
 jest.mock('../../dynamodb');
 
-import { SWIFT, WRITER_RESULTS, SONG_DETAILS } from './__helpers__';
+import { SONG_DETAILS } from './__helpers__';
 
 const debug = require('debug')('screencloud-api:api:tests:add');
 

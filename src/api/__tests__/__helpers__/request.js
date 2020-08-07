@@ -29,4 +29,6 @@ export const createPathEventObject = (
 
 export const ENDPOINTS = {
   addSongs: '/songs/add',
+  playCount: '/songs/popular/{year}/{month}/{limit}',
+  albumCount: '/albums/popular/{year}/{month}',
 };
