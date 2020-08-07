@@ -15,7 +15,11 @@
     "create": "npm run build && claudia create --region eu-west-1 --api-module dist/app --profile adamgmail && claudia tag --tags project=screencloud --profile adamgmail",
     "update": "npm run build && claudia update --profile adamgmail && claudia tag --tags project=screencloud --profile adamgmail"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrAGi/taylorswiftapi.git"
+  },
+  "author": "Adam McNicol",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
