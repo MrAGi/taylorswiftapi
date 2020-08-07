@@ -1,12 +1,7 @@
 import { createSpyObj } from 'jest-createspyobj';
 import api from '../index';
 import { DynamoDBHelper } from '../../dynamodb';
-import {
-  GET_METHOD,
-  createEventObject,
-  createPathEventObject,
-  ENDPOINTS,
-} from './__helpers__';
+import { GET_METHOD, createPathEventObject, ENDPOINTS } from './__helpers__';
 
 import { SWIFT } from '../../dynamodb/__tests__/__helpers__';
 import { PLAY_COUNT_DATA } from './__helpers__';

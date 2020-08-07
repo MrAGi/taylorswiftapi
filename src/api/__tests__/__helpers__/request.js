@@ -31,4 +31,10 @@ export const ENDPOINTS = {
   addSongs: '/songs/add',
   playCount: '/songs/popular/{year}/{month}/{limit}',
   albumCount: '/albums/popular/{year}/{month}',
+  year: '/songs/{year}',
+  cover: '/songs/cover',
+  remix: '/songs/remix',
+  writer: '/songs/writer/{name}',
+  featuring: '/songs/featuring/{name}',
+  searchSongs: '/songs/{artist}/{song}',
 };
